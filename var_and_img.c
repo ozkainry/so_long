@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:58:44 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/03/30 23:07:32 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:25:49 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	set_var(t_var *var)
 {
-	var->count_c = 0;
-	var->count_p = 0;
-	var->count_e = 0;
-	var->moves = 0;
+	*var = (t_var){0};
+	// var->count_c = 0;
+	// var->count_p = 0;
+	// var->count_e = 0;
+	// var->moves = 0;
 }
 
 void	set_path(t_var *var)
@@ -94,12 +95,4 @@ int	check_image(t_var *var)
 		&& var->img.img_char_left && var->img.img_coin && var->img.img_exit)
 		return (1);
 	return (0);
-}
-
-void	mlx_destroy_protected(void *mlx_ptr, void *img_ptr)
-{
-	if (img_ptr)
-	{
-		mlx_destroy_image(mlx_ptr, img_ptr);
-	}
 }

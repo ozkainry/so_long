@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:07:14 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/03/21 17:28:49 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:36:06 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,12 @@ char	**copy_map(t_var *var)
 	int		i;
 
 	i = 0;
-	cmap = malloc(sizeof(char *) * (var->width + 1));
+	while (var->map[i])
+	i++;
+	cmap = malloc(sizeof(char *) * (i + 1));
+	if (!cmap)
+		return (NULL);
+	i = 0;
 	while (var->map[i])
 	{
 		cmap[i] = ft_strdup(var->map[i]);
@@ -64,7 +69,7 @@ int	check_cmap(t_var *var)
 		while (cmap[i][j])
 		{
 			if (cmap[i][j] == 'E' || cmap[i][j] == 'C')
-				return (0);
+				return (free_cmap(cmap), 0);
 			j++;
 		}
 		i++;

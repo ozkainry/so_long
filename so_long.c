@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:46:40 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/03/30 15:33:57 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:27:04 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,11 @@ int	main(int argc, char **argv)
 		return (error("Error\nNo or too much arguments\n"), 1);
 	else
 	{
+		var = (t_var){0};
 		var.mlx = mlx_init();
 		if (!var.mlx)
 			return (error("Error\nNo environment\n"), 1);
-		set_var(&var);
+		// set_var(&var);
 		var.map = get_map(&var, argv);
 		if (!var.map)
 			exit_game(&var);

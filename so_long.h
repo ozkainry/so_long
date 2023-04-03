@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:31:15 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/03/30 15:32:58 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:33:39 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct s_var
 	int		newx;
 	int		newy;
 	int		coin;
+	int		coinc;
 	int		maxcoin;
 	int		moves;
 	t_img	img;

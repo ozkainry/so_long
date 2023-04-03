@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:34:12 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/03/30 23:09:17 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:23:56 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	**read_map(t_var *var)
 		str = join(str, tmp);
 	}
 	var->map = ft_split(str, '\n');
+	search_player(var);
 	return (free(tmp), free(str), var->map);
 }
 
@@ -73,7 +74,6 @@ char	**parsing(t_var *var)
 	var->height = i;
 	if (!check_line(var->map[i - 1], '1'))
 		return (free_map(var));
-	search_player(var);
 	if (!check_cmap(var))
 		return (error("Error\nExit or collectible unreachable\n"), free_map(var));
 	return (var->map);

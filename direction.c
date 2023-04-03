@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 14:19:57 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/03/30 14:20:31 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/03/31 04:07:39 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	up(t_var *var)
 	{
 		var->moves++;
 		ft_printf("Number of movements : %d\n", var->moves);
-		ft_printf("Congratulations you've won!");
+		ft_printf("Congratulations you've won!\n");
 		exit_game(var);
 	}
 	var->x = var->newx;
@@ -64,7 +64,7 @@ void	down(t_var *var)
 	{
 		var->moves++;
 		ft_printf("Number of movements : %d\n", var->moves);
-		ft_printf("Congratulations you've won!");
+		ft_printf("Congratulations you've won!\n");
 		exit_game(var);
 	}
 	var->x = var->newx;
@@ -93,7 +93,7 @@ void	left(t_var *var)
 	{
 		var->moves++;
 		ft_printf("Number of movements : %d\n", var->moves);
-		ft_printf("Congratulations you've won!");
+		ft_printf("Congratulations you've won!\n");
 		exit_game(var);
 	}
 	var->y = var->newy;
@@ -122,7 +122,7 @@ void	right(t_var *var)
 	{
 		var->moves++;
 		ft_printf("Number of movements : %d\n", var->moves);
-		ft_printf("Congratulations you've won!");
+		ft_printf("Congratulations you've won!\n");
 		exit_game(var);
 	}
 	var->y = var->newy;

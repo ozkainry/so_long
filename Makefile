@@ -1,59 +1,43 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/16 15:30:27 by ozozdemi          #+#    #+#              #
-#    Updated: 2023/03/30 15:14:04 by ozozdemi         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-NAME =		so_long
-CC =		cc
-CFLAGS =	-Wall -Werror -Wextra -g3
-LIBFT_PATH =	./libft/
-LIBFT_FILE =	libft.a
-LIBFT_LIB =	$(addprefix $(LIBFT_PATH), $(LIBFT_FILE))
-MLX_FLAG =	-lX11 -lXext
-MLX_PATH =	./minilibx-linux/
-MLX_FILE =	libmlx.a
-MLX_LIB	=	$(addprefix $(MLX_PATH), $(MLX_FILE))
-MLX_EX	=	$(MLX_LIB) $(MLX_FLAG)
-RM =		rm -rf
-SRC =		so_long.c \
+SRCS =		so_long.c \
 		map.c \
 		map_check.c \
 		var_and_img.c \
 		move.c \
 		direction.c \
 		utils.c \
-		backtracking.c
-
-OBJ =		$(SRC:.c=.o)
-
-all: $(NAME)
-
-lib:
-	make -C $(LIBFT_PATH)
-
-mlx:
-	make -sC $(MLX_PATH)
+		backtracking.c \
+		des_img.c
 
 
-$(NAME): lib mlx $(OBJ)
-	$(CC) $(OBJ) $(LIBFT_LIB) $(MLX_EX) -o $(NAME) -g3
+OBJS =		${SRCS:.c=.o}
+
+NAME =		so_long
+
+CC =		cc
+
+CFLAGS =	-Wall -Wextra -Werror -g3
+
+LDFLAGS =	-lXext -lX11 -L./minilibx-linux -lmlx -L./libft -lft 
+
+.c.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+all:		${NAME}
+
+${NAME}:	${OBJS}
+			@make -sC libft/
+			@make -sC minilibx-linux/
+			${CC} -o ${NAME} ${OBJS} ${LDFLAGS}
 
 clean:
-	make clean -sC $(MLX_PATH)
-	make clean -sC $(LIBFT_PATH)
-	$(RM) $(OBJ)
+		@make clean -sC minilibx-linux/
+		@make clean -sC libft/
+		@rm -rf ${OBJS}
 
-fclean: clean
-	$(RM) $(NAME)
-	make fclean -C $(LIBFT_PATH)
+fclean:		clean
+		@rm -rf ${NAME}
+		@make fclean -C libft/
 
-re: fclean all
+re:		fclean all
 
-.PHONY: all clean fclean re
+.PHONY:		all clean fclean re
