@@ -1,38 +1,41 @@
-SRCS =		so_long.c \
-		map.c \
-		map_check.c \
-		var_and_img.c \
-		move.c \
-		direction.c \
-		utils.c \
-		backtracking.c \
-		des_img.c
-
-
-OBJS =		${SRCS:.c=.o}
-
 NAME =		so_long
-
 CC =		cc
-
 CFLAGS =	-Wall -Wextra -Werror -g3
-
 LDFLAGS =	-lXext -lX11 -L./minilibx-linux -lmlx -L./libft -lft 
+OBJ =		$(patsubst src%, obj%, $(SRC:.c=.o))
+SRC =		src/so_long.c \
+		src/map.c \
+		src/map_check.c \
+		src/var_and_img.c \
+		src/move.c \
+		src/direction.c \
+		src/utils.c \
+		src/backtracking.c \
+		src/des_img.c
 
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+all:		obj ${NAME}
 
-all:		${NAME}
+${NAME}:	${OBJ}
+		@echo "COMPILING LIBFT\n"
+		@make -sC libft/
+		@echo "LIBFT COMPILED\n"
+		@echo "COMPILING MLX\n"
+		@make -sC minilibx-linux/
+		@echo "MLX COMPILED\n"
+		@echo "COMPILING SO_LONG\n"
+		${CC} -o ${NAME} ${OBJ} ${LDFLAGS}
+		@echo "SO_LONG COMPILED\n"
 
-${NAME}:	${OBJS}
-			@make -sC libft/
-			@make -sC minilibx-linux/
-			${CC} -o ${NAME} ${OBJS} ${LDFLAGS}
+obj:
+			@mkdir -p obj
+
+obj/%.o:	src/%.c
+			$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 
 clean:
 		@make clean -sC minilibx-linux/
 		@make clean -sC libft/
-		@rm -rf ${OBJS}
+		@rm -rf ${OBJ} obj
 
 fclean:		clean
 		@rm -rf ${NAME}
