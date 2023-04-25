@@ -6,11 +6,11 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:58:44 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/04/03 17:55:34 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:28:00 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../includes/so_long.h"
 
 void	set_path(t_var *var)
 {

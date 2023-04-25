@@ -6,11 +6,11 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:07:14 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/04/03 17:55:11 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:27:38 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../includes/so_long.h"
 
 char	**copy_map(t_var *var)
 {

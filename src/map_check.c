@@ -6,11 +6,11 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 15:16:53 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/04/03 17:55:20 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:27:45 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../includes/so_long.h"
 
 int	check_map(char **map)
 {

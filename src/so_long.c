@@ -6,11 +6,11 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:46:40 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/04/03 17:55:30 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:27:54 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../includes/so_long.h"
 
 int	handle_no_event(void *var)
 {

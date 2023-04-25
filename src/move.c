@@ -6,11 +6,11 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:17:21 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/04/03 17:55:26 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:27:51 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../includes/so_long.h"
 
 void	search_player(t_var *var)
 {

@@ -1,5 +1,5 @@
 NAME =		so_long
-CC =		cc
+CC =		@cc
 CFLAGS =	-Wall -Wextra -Werror -g3
 LDFLAGS =	-lXext -lX11 -L./minilibx-linux -lmlx -L./libft -lft 
 OBJ =		$(patsubst src%, obj%, $(SRC:.c=.o))

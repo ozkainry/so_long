@@ -6,11 +6,11 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 19:09:23 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/04/03 17:55:32 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:27:57 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../includes/so_long.h"
 
 char	*join(char *s1, char *s2)
 {
