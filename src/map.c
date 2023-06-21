@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:34:12 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/04/25 13:27:48 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/06/01 15:28:25 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,14 +95,13 @@ char	**get_map(t_var *var, char **argv)
 			var->map = parsing(var);
 		else
 		{
+			close(var->fd);
 			return (error("Error\nCan't open file\n"));
 		}
 		if ((var->count_c == 0 || var->count_e != 1 || var->count_p != 1)
 			&& var->map != NULL)
-		{
 			return (error("Error\nNeed 1 Exit, 1 Player and atleast 1 Coin\n"),
 				free_map(var));
-		}
 	}
 	close(var->fd);
 	return (var->map);

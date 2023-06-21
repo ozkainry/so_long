@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:07:14 by ozozdemi          #+#    #+#             */
-/*   Updated: 2023/04/25 13:27:38 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/06/01 14:29:42 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ void	fill_flood(t_point p, char **map, t_var *var)
 
 	if (!is_inside_map(p, var) || map[p.x][p.y] == '1' || map[p.x][p.y] == 'M')
 		return ;
+	if (map[p.x][p.y] == 'E')
+	{
+		map[p.x][p.y] = 'M';
+		return ;
+	}
 	map[p.x][p.y] = 'M';
 	fill_flood(right, map, var);
 	fill_flood(down, map, var);
